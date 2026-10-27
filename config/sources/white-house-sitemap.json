@@ -1,0 +1,30 @@
+{
+  "identifier": "white-house-sitemap",
+  "name": "The White House Sitemap",
+  "feed_url": "https://www.whitehouse.gov/post-sitemap.xml",
+  "domain": "www.whitehouse.gov",
+  "organization": "The White House",
+  "source_group": "us-white-house",
+  "feed_type": "SITEMAP",
+  "category": "US_CHINA_RELATIONS",
+  "notes": "Official White House post sitemap; bounded metadata-only discovery of current event pages.",
+  "compliance_note": "Discovery and factual event extraction only; preserve US official position attribution and review reuse terms before republication.",
+  "source_type": "OFFICIAL",
+  "country": "US",
+  "language": "en",
+  "tier": "A",
+  "reliability": 0.98,
+  "active": true,
+  "crawl_policy": {
+    "feed_only": true,
+    "collection_method": "sitemap",
+    "first_import_limit": 20,
+    "first_import_days": 7,
+    "path_allow_prefixes": ["/briefings-statements", "/presidential-actions", "/fact-sheets", "/releases"],
+    "path_allow_patterns": ["^/(?:briefings-statements|presidential-actions|fact-sheets|releases)/[0-9]{4}/[0-9]{2}/[^/]+$"],
+    "path_deny_prefixes": ["/research", "/remarks"],
+    "source_freshness_days": 30,
+    "source_scope_limit": 100
+  },
+  "license_state": "REVIEW_REQUIRED"
+}

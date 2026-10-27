@@ -1,0 +1,20 @@
+{
+  "identifier": "apple-newsroom",
+  "name": "Apple Newsroom",
+  "feed_url": "https://www.apple.com/newsroom/rss-feed.rss",
+  "domain": "www.apple.com",
+  "organization": "Apple Inc.",
+  "source_group": "apple",
+  "feed_type": "RSS",
+  "category": "AI_TECH",
+  "notes": "Official Apple newsroom feed.",
+  "compliance_note": "Discovery and factual event extraction only; Apple content and media remain subject to Apple terms.",
+  "source_type": "OFFICIAL",
+  "country": "US",
+  "language": "en",
+  "tier": "A",
+  "reliability": 0.95,
+  "active": true,
+  "crawl_policy": {"feed_only": true},
+  "license_state": "REVIEW_REQUIRED"
+}

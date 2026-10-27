@@ -1,0 +1,38 @@
+{% load static %}<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page_title|default:"SignalToday｜少刷一点，多知道一点" }}</title>
+  <meta name="description" content="{{ page_description|default:'每天筛选真正值得知道的信息，用更短时间看懂重要变化。' }}">
+  <link rel="canonical" href="{{ canonical_url }}">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="SignalToday">
+  <meta property="og:title" content="{{ page_title|default:'SignalToday｜少刷一点，多知道一点' }}">
+  <meta property="og:description" content="{{ page_description|default:'每天筛选真正值得知道的信息，用更短时间看懂重要变化。' }}">
+  <meta property="og:url" content="{{ canonical_url }}">
+  <link rel="stylesheet" href="{% static 'css/site.css' %}">
+</head>
+<body>
+  <a class="skip-link" href="#main">跳到正文</a>
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="brand" href="{% url 'publishing:home' %}" aria-label="SignalToday 首页">
+        <span class="signal-mark" aria-hidden="true"></span>
+        <span class="brand-copy">
+          <span>SignalToday</span>
+          <small>少刷一点，多知道一点。</small>
+        </span>
+      </a>
+      <nav aria-label="主要导航">
+        <a href="{% url 'publishing:home' %}">今日</a>
+        <a href="{% url 'publishing:history' %}">历史日报</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main">{% block content %}{% endblock %}</main>
+  <footer class="site-footer">
+    <div class="shell">看懂以后，就可以离开。</div>
+  </footer>
+</body>
+</html>

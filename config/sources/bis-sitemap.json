@@ -1,0 +1,20 @@
+{
+  "identifier": "bis-sitemap",
+  "name": "U.S. Bureau of Industry and Security Sitemap",
+  "feed_url": "https://www.bis.gov/sitemap.xml",
+  "domain": "www.bis.gov",
+  "organization": "U.S. Bureau of Industry and Security",
+  "source_group": "us-bis",
+  "feed_type": "SITEMAP",
+  "category": "US_CHINA_RELATIONS",
+  "notes": "Official BIS sitemap; metadata-only discovery for export-control and technology policy pages.",
+  "compliance_note": "Discovery and factual event extraction only; preserve US official position attribution and review reuse terms before republication.",
+  "source_type": "OFFICIAL",
+  "country": "US",
+  "language": "en",
+  "tier": "A",
+  "reliability": 0.98,
+  "active": true,
+  "crawl_policy": {"feed_only": true, "collection_method": "sitemap", "first_import_limit": 20, "first_import_days": 7},
+  "license_state": "REVIEW_REQUIRED"
+}

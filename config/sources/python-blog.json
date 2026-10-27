@@ -1,0 +1,20 @@
+{
+  "identifier": "python-blog",
+  "name": "Python Insider",
+  "feed_url": "https://blog.python.org/feeds/posts/default?alt=rss",
+  "domain": "blog.python.org",
+  "organization": "Python Software Foundation",
+  "source_group": "python-software-foundation",
+  "feed_type": "RSS",
+  "category": "AI_TECH",
+  "notes": "Official Python Software Foundation blog feed; currently returns an unsupported Content-Type.",
+  "compliance_note": "Discovery and factual event extraction only; do not republish feed text.",
+  "source_type": "OFFICIAL",
+  "country": "US",
+  "language": "en",
+  "tier": "A",
+  "reliability": 0.9,
+  "active": true,
+  "crawl_policy": {"feed_only": true},
+  "license_state": "REVIEW_REQUIRED"
+}

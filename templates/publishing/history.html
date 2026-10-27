@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="shell history-shell">
+  <header class="compact-heading">
+    <p class="kicker">最近 30 天</p>
+    <h1>历史日报</h1>
+  </header>
+  {% if digests %}
+  <ol class="history-list">
+    {% for digest in digests %}
+    <li><a href="{% url 'publishing:digest-detail' digest.digest_date|date:'Y-m-d' %}"><time datetime="{{ digest.digest_date|date:'Y-m-d' }}">{{ digest.digest_date|date:"Y-m-d" }}</time><span>精选 {{ digest.public_item_count }} 条</span><span aria-hidden="true">→</span></a></li>
+    {% endfor %}
+  </ol>
+  {% else %}<section class="empty-state"><h2>暂时没有历史日报</h2><p>新的精选日报会按日期出现在这里。</p></section>{% endif %}
+</div>
+{% endblock %}

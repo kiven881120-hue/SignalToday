@@ -1,0 +1,34 @@
+{
+  "identifier": "mee-list",
+  "name": "Ministry of Ecology and Environment of China News List",
+  "feed_url": "https://www.mee.gov.cn/ywdt/",
+  "domain": "www.mee.gov.cn",
+  "organization": "Ministry of Ecology and Environment of the People's Republic of China",
+  "source_group": "cn-mee",
+  "feed_type": "HTML",
+  "category": "ENVIRONMENT",
+  "notes": "Official MEE news list with bounded generic article-body extraction.",
+  "compliance_note": "Discovery and factual event extraction only; preserve official attribution and review reuse terms before republication.",
+  "source_type": "OFFICIAL",
+  "country": "CN",
+  "language": "zh",
+  "tier": "A",
+  "reliability": 0.95,
+  "active": true,
+  "crawl_policy": {
+    "feed_only": true,
+    "collection_method": "html",
+    "first_import_limit": 20,
+    "first_import_days": 7,
+    "fetch_article_body": true,
+    "article_body_limit": 10,
+    "path_allow_prefixes": ["/ywdt", "/ywgz"],
+    "path_allow_patterns": [
+      "^/ywdt/(?:hjywnews|xwfb|zbft)/[0-9]{6}/t[0-9]{8}_[0-9]+\\.shtml$",
+      "^/ywdt/gsgg/(?:[^/]+/)*[0-9]{6}/t[0-9]{8}_[0-9]+\\.shtml$",
+      "^/ywgz/(?:[^/]+/)+[0-9]{6}/t[0-9]{8}_[0-9]+\\.shtml$"
+    ],
+    "path_deny_prefixes": ["/ywdt/dfnews", "/ywdt/spxw", "/ywdt/szyw", "/home"]
+  },
+  "license_state": "REVIEW_REQUIRED"
+}

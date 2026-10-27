@@ -1,0 +1,20 @@
+{
+  "identifier": "google-blog",
+  "name": "Google Blog",
+  "feed_url": "https://blog.google/rss/",
+  "domain": "blog.google",
+  "organization": "Google LLC",
+  "source_group": "google",
+  "feed_type": "RSS",
+  "category": "AI_TECH",
+  "notes": "Official Google company blog feed.",
+  "compliance_note": "Discovery and factual event extraction only; do not republish Google text or media.",
+  "source_type": "OFFICIAL",
+  "country": "US",
+  "language": "en",
+  "tier": "A",
+  "reliability": 0.95,
+  "active": true,
+  "crawl_policy": {"feed_only": true},
+  "license_state": "REVIEW_REQUIRED"
+}

@@ -1,0 +1,20 @@
+{
+  "identifier": "microsoft-blog",
+  "name": "Microsoft Official Blog",
+  "feed_url": "https://blogs.microsoft.com/feed/",
+  "domain": "blogs.microsoft.com",
+  "organization": "Microsoft Corporation",
+  "source_group": "microsoft",
+  "feed_type": "RSS",
+  "category": "AI_TECH",
+  "notes": "Official Microsoft corporate blog feed.",
+  "compliance_note": "Discovery and factual event extraction only; do not republish Microsoft text or media.",
+  "source_type": "OFFICIAL",
+  "country": "US",
+  "language": "en",
+  "tier": "A",
+  "reliability": 0.95,
+  "active": true,
+  "crawl_policy": {"feed_only": true},
+  "license_state": "REVIEW_REQUIRED"
+}

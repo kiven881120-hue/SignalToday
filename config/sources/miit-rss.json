@@ -1,0 +1,20 @@
+{
+  "identifier": "miit-rss",
+  "name": "Ministry of Industry and Information Technology of China",
+  "feed_url": "https://wap.miit.gov.cn/api-gateway/jpaas-plugins-web-server/front/rss/getinfo?webId=8d828e408d90447786ddbe128d495e9e&columnIds=d3e2bede1bc045e2875fc7161c01db7d",
+  "domain": "wap.miit.gov.cn",
+  "organization": "Ministry of Industry and Information Technology of the People's Republic of China",
+  "source_group": "cn-miit",
+  "feed_type": "RSS",
+  "category": "AI_TECH",
+  "notes": "Official MIIT RSS endpoint; covers ministry activities and industrial policy signals.",
+  "compliance_note": "Discovery and factual event extraction only; preserve official attribution and review reuse terms before republication.",
+  "source_type": "OFFICIAL",
+  "country": "CN",
+  "language": "zh",
+  "tier": "A",
+  "reliability": 0.95,
+  "active": false,
+  "crawl_policy": {"feed_only": true, "fetch_article_body": true, "article_body_limit": 10},
+  "license_state": "REVIEW_REQUIRED"
+}

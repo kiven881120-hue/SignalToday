@@ -1,0 +1,8 @@
+<a class="story-card" href="{% url 'publishing:digest-article-detail' digest.digest_date item.article_id %}">
+  <h3>{% if item.article_version.classification == "MUST_KNOW" %}<span aria-label="非常重要">⭐</span> {% endif %}{{ item.article_version.title }}</h3>
+  {% if item.card_summary %}<p class="story-summary">{{ item.card_summary }}</p>{% endif %}
+  <span class="story-meta">
+    <span>{% if item.source_name %}{{ item.source_name }}{% else %}来源待补充{% endif %}</span>
+    {% if item.article.published_at %}<time datetime="{{ item.article.published_at|date:'c' }}">{{ item.article.published_at|date:"m 月 d 日 H:i" }}</time>{% endif %}
+  </span>
+</a>

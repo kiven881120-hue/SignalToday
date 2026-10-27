@@ -1,0 +1,20 @@
+{
+  "identifier": "sec-us",
+  "name": "U.S. Securities and Exchange Commission Press Releases",
+  "feed_url": "https://www.sec.gov/news/pressreleases.rss",
+  "domain": "www.sec.gov",
+  "organization": "U.S. Securities and Exchange Commission",
+  "source_group": "us-sec",
+  "feed_type": "RSS",
+  "category": "US_CHINA_RELATIONS",
+  "notes": "Official SEC press-release RSS feed; relevant to China-linked issuers and cross-border market regulation.",
+  "compliance_note": "Preserve US official position attribution; discovery and factual event extraction only; review reuse terms before republication.",
+  "source_type": "OFFICIAL",
+  "country": "US",
+  "language": "en",
+  "tier": "A",
+  "reliability": 0.98,
+  "active": true,
+  "crawl_policy": {"feed_only": true, "fetch_article_body": true, "article_body_limit": 10},
+  "license_state": "REVIEW_REQUIRED"
+}

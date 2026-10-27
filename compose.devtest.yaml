@@ -1,0 +1,13 @@
+name: signaltoday-devtest
+
+volumes:
+  postgres_data:
+    name: signaltoday_devtest_postgres_data
+
+networks:
+  backend:
+    name: signaltoday_devtest_backend
+  frontend:
+    name: signaltoday_devtest_frontend
+  egress:
+    name: signaltoday_devtest_egress

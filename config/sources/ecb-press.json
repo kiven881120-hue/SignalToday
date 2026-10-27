@@ -1,0 +1,20 @@
+{
+  "identifier": "ecb-press",
+  "name": "European Central Bank Press Releases",
+  "feed_url": "https://www.ecb.europa.eu/rss/press.html",
+  "domain": "www.ecb.europa.eu",
+  "organization": "European Central Bank",
+  "source_group": "european-central-bank",
+  "feed_type": "RSS",
+  "category": "FINANCE",
+  "notes": "Official ECB press release feed.",
+  "compliance_note": "Discovery and factual event extraction only; attribution and ECB reuse rules require review before republication.",
+  "source_type": "OFFICIAL",
+  "country": "",
+  "language": "en",
+  "tier": "A",
+  "reliability": 0.98,
+  "active": true,
+  "crawl_policy": {"feed_only": true},
+  "license_state": "REVIEW_REQUIRED"
+}

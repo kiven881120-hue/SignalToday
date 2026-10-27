@@ -1,0 +1,20 @@
+{
+  "identifier": "nasa",
+  "name": "NASA",
+  "feed_url": "https://www.nasa.gov/feed/",
+  "domain": "www.nasa.gov",
+  "organization": "National Aeronautics and Space Administration",
+  "source_group": "nasa",
+  "feed_type": "RSS",
+  "category": "SCIENCE",
+  "notes": "Official NASA news feed.",
+  "compliance_note": "Discovery and factual event extraction only; do not republish feed text or media.",
+  "source_type": "OFFICIAL",
+  "country": "US",
+  "language": "en",
+  "tier": "A",
+  "reliability": 0.95,
+  "active": true,
+  "crawl_policy": {"feed_only": true},
+  "license_state": "REVIEW_REQUIRED"
+}

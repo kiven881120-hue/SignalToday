@@ -1,0 +1,3 @@
+heartbeat:
+  enabled: true
+  interval_seconds: 60

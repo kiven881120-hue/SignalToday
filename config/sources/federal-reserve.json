@@ -1,0 +1,20 @@
+{
+  "identifier": "federal-reserve",
+  "name": "Federal Reserve Press Releases",
+  "feed_url": "https://www.federalreserve.gov/feeds/press_all.xml",
+  "domain": "www.federalreserve.gov",
+  "organization": "Board of Governors of the Federal Reserve System",
+  "source_group": "federal-reserve",
+  "feed_type": "RSS",
+  "category": "FINANCE",
+  "notes": "Official Federal Reserve press release feed.",
+  "compliance_note": "Discovery and factual event extraction only; preserve attribution and review third-party material separately.",
+  "source_type": "OFFICIAL",
+  "country": "US",
+  "language": "en",
+  "tier": "A",
+  "reliability": 0.98,
+  "active": true,
+  "crawl_policy": {"feed_only": true},
+  "license_state": "REVIEW_REQUIRED"
+}

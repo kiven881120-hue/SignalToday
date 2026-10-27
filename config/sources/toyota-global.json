@@ -1,0 +1,20 @@
+{
+  "identifier": "toyota-global",
+  "name": "Toyota Global Newsroom",
+  "feed_url": "https://global.toyota/export/en/allnews_rss.xml",
+  "domain": "global.toyota",
+  "organization": "Toyota Motor Corporation",
+  "source_group": "toyota",
+  "feed_type": "RSS",
+  "category": "AUTO",
+  "notes": "Official Toyota global newsroom feed.",
+  "compliance_note": "Discovery and factual event extraction only; Toyota terms restrict reuse and require separate permission review.",
+  "source_type": "OFFICIAL",
+  "country": "JP",
+  "language": "en",
+  "tier": "A",
+  "reliability": 0.95,
+  "active": true,
+  "crawl_policy": {"feed_only": true},
+  "license_state": "REVIEW_REQUIRED"
+}

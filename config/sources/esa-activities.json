@@ -1,0 +1,20 @@
+{
+  "identifier": "esa-activities",
+  "name": "European Space Agency Activities",
+  "feed_url": "https://www.esa.int/rssfeed/Our_Activities",
+  "domain": "www.esa.int",
+  "organization": "European Space Agency",
+  "source_group": "european-space-agency",
+  "feed_type": "RSS",
+  "category": "SCIENCE",
+  "notes": "Official ESA activities feed.",
+  "compliance_note": "Discovery and factual event extraction only; ESA text and media reuse terms require separate review.",
+  "source_type": "OFFICIAL",
+  "country": "",
+  "language": "en",
+  "tier": "A",
+  "reliability": 0.95,
+  "active": true,
+  "crawl_policy": {"feed_only": true},
+  "license_state": "REVIEW_REQUIRED"
+}

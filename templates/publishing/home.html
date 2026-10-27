@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="shell page-shell">
+  <section class="digest-heading home-heading">
+    <p class="kicker">今日信息简报</p>
+    <div class="date-line">
+      <time datetime="{{ digest_date|date:'Y-m-d' }}">{{ digest_date|date:"Y 年 m 月 d 日" }}</time>
+      <span>今日整理 {{ selected_count }} 条信号</span>
+    </div>
+    <h1>今天出现了哪些新信号？</h1>
+  </section>
+  {% include "publishing/_digest_sections.html" %}
+</div>
+{% endblock %}

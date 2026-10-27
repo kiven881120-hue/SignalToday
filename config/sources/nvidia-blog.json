@@ -1,0 +1,20 @@
+{
+  "identifier": "nvidia-blog",
+  "name": "NVIDIA Blog",
+  "feed_url": "https://blogs.nvidia.com/feed/",
+  "domain": "blogs.nvidia.com",
+  "organization": "NVIDIA Corporation",
+  "source_group": "nvidia",
+  "feed_type": "RSS",
+  "category": "AI_TECH",
+  "notes": "Official NVIDIA corporate blog feed.",
+  "compliance_note": "Discovery and factual event extraction only; do not republish NVIDIA text or media.",
+  "source_type": "OFFICIAL",
+  "country": "US",
+  "language": "en",
+  "tier": "A",
+  "reliability": 0.95,
+  "active": true,
+  "crawl_policy": {"feed_only": true},
+  "license_state": "REVIEW_REQUIRED"
+}

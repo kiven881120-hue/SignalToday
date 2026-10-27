@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+<article class="shell article-shell">
+  <header class="article-header">
+    {% if category %}<p class="article-category"><span aria-hidden="true">{{ category.0 }}</span> {{ category.1 }}</p>{% endif %}
+    <h1>{% if version.classification == "MUST_KNOW" %}<span aria-label="非常重要">⭐</span> {% endif %}{{ version.title }}</h1>
+    <p class="article-summary">{{ version.one_sentence_summary }}</p>
+  </header>
+  <div class="article-body">
+    {% if version.what_happened %}<p>{{ version.what_happened|linebreaksbr }}</p>{% endif %}
+    {% if version.why_it_matters %}<p>{{ version.why_it_matters|linebreaksbr }}</p>{% endif %}
+    {% if version.who_is_affected %}<p>{{ version.who_is_affected|linebreaksbr }}</p>{% endif %}
+    {% if version.example %}<p>{{ version.example|linebreaksbr }}</p>{% endif %}
+  </div>
+  <section class="sources" aria-labelledby="sources-title">
+    <h2 id="sources-title">来源与依据</h2>
+    {% if sources %}
+    <ul>
+      {% for source in sources %}
+      <li><a href="{{ source.url }}" target="_blank" rel="noopener noreferrer">{{ source.name }}<span class="source-title">{{ source.title }}</span></a></li>
+      {% endfor %}
+    </ul>
+    {% else %}<p>来源记录暂不可用。</p>{% endif %}
+  </section>
+  <footer class="article-footer">
+    {% if article.published_at %}<time datetime="{{ article.published_at|date:'c' }}">更新时间 {{ article.published_at|date:"Y-m-d H:i" }}</time>{% endif %}
+    <div class="return-links">
+      <a href="{% url 'publishing:home' %}">← 返回今日</a>
+      {% if digest_item %}<a href="{% url 'publishing:digest-detail' digest_item.digest.digest_date|date:'Y-m-d' %}">返回日报</a>{% endif %}
+    </div>
+  </footer>
+</article>
+{% endblock %}

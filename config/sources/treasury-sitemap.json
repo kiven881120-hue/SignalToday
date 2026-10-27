@@ -1,0 +1,39 @@
+{
+  "identifier": "treasury-sitemap",
+  "name": "U.S. Department of the Treasury Sitemap",
+  "feed_url": "https://home.treasury.gov/sitemap.xml",
+  "domain": "home.treasury.gov",
+  "organization": "U.S. Department of the Treasury",
+  "source_group": "us-treasury",
+  "feed_type": "SITEMAP",
+  "category": "US_CHINA_RELATIONS",
+  "notes": "Official Treasury sitemap; bounded metadata-only discovery of current press releases.",
+  "compliance_note": "Discovery and factual event extraction only; preserve US official position attribution and review reuse terms before republication.",
+  "source_type": "OFFICIAL",
+  "country": "US",
+  "language": "en",
+  "tier": "A",
+  "reliability": 0.98,
+  "active": true,
+  "crawl_policy": {
+    "feed_only": true,
+    "collection_method": "sitemap",
+    "first_import_limit": 20,
+    "first_import_days": 7,
+    "path_allow_prefixes": [
+      "/news/press-releases",
+      "/news/readouts",
+      "/news/secretary-statements-remarks",
+      "/policy-issues/financial-sanctions/recent-actions"
+    ],
+    "path_allow_patterns": [
+      "^/news/press-releases/sb[0-9]+$",
+      "^/news/(?:readouts|secretary-statements-remarks)/[^/]+$",
+      "^/policy-issues/financial-sanctions/recent-actions/[^/]+$"
+    ],
+    "path_deny_prefixes": ["/about", "/history", "/data", "/services", "/footer", "/careers", "/contact", "/archive"],
+    "source_freshness_days": 30,
+    "source_scope_limit": 100
+  },
+  "license_state": "REVIEW_REQUIRED"
+}

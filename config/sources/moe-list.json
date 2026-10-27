@@ -1,0 +1,30 @@
+{
+  "identifier": "moe-list",
+  "name": "Ministry of Education of China News List",
+  "feed_url": "http://www.moe.gov.cn/jyb_xwfb/",
+  "domain": "www.moe.gov.cn",
+  "organization": "Ministry of Education of the People's Republic of China",
+  "source_group": "cn-moe",
+  "feed_type": "HTML",
+  "category": "EDUCATION",
+  "notes": "Official MOE news list with bounded generic article-body extraction.",
+  "compliance_note": "Discovery and factual event extraction only; preserve official attribution and review reuse terms before republication.",
+  "source_type": "OFFICIAL",
+  "country": "CN",
+  "language": "zh",
+  "tier": "A",
+  "reliability": 0.95,
+  "active": true,
+  "crawl_policy": {
+    "feed_only": true,
+    "collection_method": "html",
+    "first_import_limit": 20,
+    "first_import_days": 7,
+    "fetch_article_body": true,
+    "article_body_limit": 10,
+    "path_allow_prefixes": ["/jyb_xwfb"],
+    "path_allow_patterns": ["^/jyb_xwfb/(?:[^/]+/)+[0-9]{6}/t[0-9]{8}_[0-9]+\\.html$"],
+    "path_deny_prefixes": ["/jyb_xwfb/moe_2082", "/jyb_xwfb/xw_fbh", "/fbh"]
+  },
+  "license_state": "REVIEW_REQUIRED"
+}

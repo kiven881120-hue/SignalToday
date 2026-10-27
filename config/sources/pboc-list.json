@@ -1,0 +1,33 @@
+{
+  "identifier": "pboc-list",
+  "name": "People's Bank of China News List",
+  "feed_url": "http://www.pbc.gov.cn/goutongjiaoliu/113456/113469/index.html",
+  "domain": "www.pbc.gov.cn",
+  "organization": "People's Bank of China",
+  "source_group": "cn-pboc",
+  "feed_type": "HTML",
+  "category": "FINANCE",
+  "notes": "Official PBOC communication list; metadata-only list extraction.",
+  "compliance_note": "Discovery and factual event extraction only; preserve official attribution and review reuse terms before republication.",
+  "source_type": "OFFICIAL",
+  "country": "CN",
+  "language": "zh",
+  "tier": "A",
+  "reliability": 0.98,
+  "active": true,
+  "crawl_policy": {
+    "feed_only": true,
+    "collection_method": "html",
+    "first_import_limit": 20,
+    "first_import_days": 7,
+    "path_allow_prefixes": ["/goutongjiaoliu/113456/113469"],
+    "path_allow_patterns": ["^/goutongjiaoliu/113456/113469/[0-9]{19}/index\\.html$"],
+    "path_deny_prefixes": [
+      "/goutongjiaoliu/113456/113469/index.html",
+      "/rmyh",
+      "/AiWza",
+      "/en"
+    ]
+  },
+  "license_state": "REVIEW_REQUIRED"
+}

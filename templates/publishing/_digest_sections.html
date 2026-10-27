@@ -1,0 +1,68 @@
+{% if selected_count %}
+  <section class="digest-section priority-section" aria-labelledby="must-know">
+    <div class="section-heading">
+      <h2 id="must-know"><span aria-hidden="true">🔥</span> 今日必须知道</h2>
+      <p>先看最需要及时了解的变化。</p>
+    </div>
+    {% if must_know %}
+    <div class="story-list">
+      {% for item in must_know %}{% include "publishing/_story_card.html" %}{% endfor %}
+    </div>
+    {% else %}
+      <p class="lane-empty">当前暂无真实数据验证</p>
+    {% endif %}
+  </section>
+
+  <section class="digest-section discover-section" aria-labelledby="discover">
+    <div class="section-heading">
+      <h2 id="discover"><span aria-hidden="true">🧭</span> 你可能不知道</h2>
+      <p>这些不是你主动搜索的，但可能值得你看看。</p>
+    </div>
+    {% if discover %}
+    <div class="story-list">
+      {% for item in discover %}{% include "publishing/_story_card.html" %}{% endfor %}
+    </div>
+    {% else %}
+      <p class="lane-empty">当前暂无真实数据验证</p>
+    {% endif %}
+  </section>
+
+  <section class="digest-section personalized-section" aria-labelledby="personalized">
+    <div class="section-heading">
+      <h2 id="personalized"><span aria-hidden="true">👀</span> 我想看的</h2>
+      <p>登录后，我们会根据你主动选择的兴趣，为你减少无关信息。</p>
+    </div>
+    {% if personalized %}
+    <div class="story-list">
+      {% for item in personalized %}{% include "publishing/_story_card.html" %}{% endfor %}
+    </div>
+    {% else %}
+      <p class="lane-empty">当前暂无真实数据验证</p>
+    {% endif %}
+  </section>
+
+  <section class="digest-section topics-section" aria-labelledby="more-topics">
+    <div class="section-heading">
+      <h2 id="more-topics"><span aria-hidden="true">📚</span> 更多主题</h2>
+      <p>按主题查看本期其余信息。</p>
+    </div>
+    {% if topic_sections %}
+      {% for section in topic_sections %}
+      <div class="topic-group" aria-labelledby="topic-{{ forloop.counter }}">
+        <h3 id="topic-{{ forloop.counter }}"><span aria-hidden="true">{{ section.icon }}</span> {{ section.label }}</h3>
+        <div class="story-list">
+          {% for item in section.items %}{% include "publishing/_story_card.html" %}{% endfor %}
+        </div>
+      </div>
+      {% endfor %}
+    {% else %}
+      <p class="lane-empty">当前暂无真实数据验证</p>
+    {% endif %}
+  </section>
+{% else %}
+  <section class="empty-state" aria-labelledby="empty-title">
+    <span class="empty-signal" aria-hidden="true"></span>
+    <h2 id="empty-title">当前没有可展示的文章</h2>
+    <p>新的可靠信号还在整理中。</p>
+  </section>
+{% endif %}
