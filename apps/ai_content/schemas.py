@@ -240,6 +240,20 @@ ARTICLE_GENERATION_SCHEMA_V1_3 = {
 }
 
 
+ARTICLE_GENERATION_SCHEMA_V1_4 = {
+    **ARTICLE_GENERATION_SCHEMA_V1_3,
+    "title": "article_generation_v1_4",
+    "required": [*ARTICLE_GENERATION_SCHEMA_V1_3["required"], "content_quality"],
+    "properties": {
+        **ARTICLE_GENERATION_SCHEMA_V1_3["properties"],
+        "content_quality": {
+            "type": "string",
+            "enum": ["CLEAN", "EXAGGERATED", "PROMOTIONAL", "UNVERIFIED_CLAIM"],
+        },
+    },
+}
+
+
 def article_schema_for_version(schema_version):
     schemas = {
         "article-generation-v1": ARTICLE_GENERATION_SCHEMA,
@@ -247,6 +261,7 @@ def article_schema_for_version(schema_version):
         "article-generation-v1.1": ARTICLE_GENERATION_SCHEMA_V1_1,
         "article-generation-v1.2": ARTICLE_GENERATION_SCHEMA_V1_2,
         "article-generation-v1.3": ARTICLE_GENERATION_SCHEMA_V1_3,
+        "article-generation-v1.4": ARTICLE_GENERATION_SCHEMA_V1_4,
     }
     try:
         return schemas[schema_version]
@@ -412,6 +427,8 @@ def parse_article_output(raw, *, schema_version="article-generation-v1"):
         return _parse_article_generation_v1_1(data)
     elif schema_version == "article-generation-v1.3":
         return _parse_article_generation_v1_1(data, allow_empty_body=True)
+    elif schema_version == "article-generation-v1.4":
+        return _parse_article_generation_v1_1(data, allow_empty_body=True, require_content_quality=True)
     else:
         raise ValidationError("Unsupported article schema version")
     _strict_keys(data, [*fields, "claim_ids"], "article output")
@@ -465,14 +482,19 @@ def _required_or_null(value, *, status, established, none_established, field):
     raise ValidationError(f"{field} status is invalid")
 
 
-def _parse_article_generation_v1_1(data, *, allow_empty_body=False):
-    _strict_keys(data, [*ARTICLE_GENERATION_V1_1_FIELDS, "claim_ids"], "article output")
+def _parse_article_generation_v1_1(data, *, allow_empty_body=False, require_content_quality=False):
+    required_fields = [*ARTICLE_GENERATION_V1_1_FIELDS, "claim_ids"]
+    if require_content_quality:
+        required_fields.append("content_quality")
+    _strict_keys(data, required_fields, "article output")
     allowed = {
         "article_mode": {"STANDARD", "BRIEF"},
         "why_status": {"WHY_ESTABLISHED", "WHY_NONE_ESTABLISHED"},
         "who_status": {"WHO_ESTABLISHED", "WHO_NONE_ESTABLISHED"},
         "example_type": {"ABSTRACT_ANALOGY", "NONE"},
     }
+    if require_content_quality:
+        allowed["content_quality"] = {"CLEAN", "EXAGGERATED", "PROMOTIONAL", "UNVERIFIED_CLAIM"}
     for field, values in allowed.items():
         if data[field] not in values:
             raise ValidationError(f"{field} is invalid")
@@ -536,4 +558,6 @@ def _parse_article_generation_v1_1(data, *, allow_empty_body=False):
     if len(set(claim_ids)) != len(claim_ids):
         raise ValidationError("claim_ids must be unique")
     parsed["claim_ids"] = claim_ids
+    if require_content_quality:
+        parsed["content_quality"] = data["content_quality"]
     return parsed

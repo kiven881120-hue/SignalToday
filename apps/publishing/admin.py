@@ -49,14 +49,14 @@ class ArticleVersionClaimAdmin(admin.ModelAdmin):
 @admin.register(ArticleContentValidation)
 class ArticleContentValidationAdmin(admin.ModelAdmin):
     list_display = (
-        "article_version", "grounding_status", "quality_status", "validated_at",
+        "article_version", "grounding_status", "quality_status", "content_quality", "validated_at",
     )
-    list_filter = ("grounding_status", "quality_status")
+    list_filter = ("grounding_status", "quality_status", "content_quality")
     readonly_fields = (
         "article_version", "content_hash", "grounding_status",
         "grounding_validator_version", "grounding_result", "quality_status",
         "quality_validator_version", "quality_input", "quality_result",
-        "created_at", "validated_at",
+        "content_quality", "created_at", "validated_at",
     )
 
     def has_add_permission(self, request):

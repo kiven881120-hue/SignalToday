@@ -150,6 +150,7 @@ class ArticleContentValidation(models.Model):
     quality_validator_version = models.CharField(max_length=50)
     quality_input = models.JSONField(default=dict)
     quality_result = models.JSONField(default=dict)
+    content_quality = models.CharField(max_length=32, blank=True, default="")
     created_at = models.DateTimeField(auto_now_add=True)
     validated_at = models.DateTimeField(auto_now=True)
 

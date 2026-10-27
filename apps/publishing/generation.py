@@ -18,9 +18,11 @@ from apps.claims.models import Claim, ClaimEvidence, EvidenceStance
 from apps.jobs.contracts import JobStatus
 from apps.jobs.models import JobRun, JobStep
 
+from .auto_publish import evaluate_and_maybe_auto_publish
 from .eligibility import ArticleGenerationEligibility, evaluate_article_generation_eligibility
 from .content_gate import persist_content_gate
 from .models import Article, ArticleStatus, ArticleVersion, ArticleVersionClaim
+from .risk import assess_article_risk
 
 
 JOB_TYPE = "ARTICLE_GENERATION"
@@ -273,6 +275,15 @@ def _create_article(event, output, claims, eligibility, call, run):
         AuditLog.objects.create(action="ARTICLE_VERSION_CREATED", object_type="ArticleVersion", object_id=str(version.pk), after_data=common)
         AuditLog.objects.create(action="ARTICLE_VERSION_CLAIMS_LINKED", object_type="ArticleVersion", object_id=str(version.pk), after_data=common)
         gate = persist_content_gate(version, output)
+        risk = assess_article_risk(version)
+        article.risk_level = risk.risk_level
+        article.save(update_fields=["risk_level", "updated_at"])
+        AuditLog.objects.create(
+            action="ARTICLE_RISK_ASSESSED", object_type="Article", object_id=str(article.pk),
+            after_data={
+                **common, "risk_level": risk.risk_level, "reason_code": risk.reason_code,
+            },
+        )
         return article, version, gate
 
 
@@ -396,7 +407,7 @@ def generate_article(event_id, *, dry_run=False, retry=False, provider=None):
             "failed_checks": gate.quality_result.get("failed_checks", []),
         })
         _finish(run)
-        return ArticleGenerationResult(
+        result = ArticleGenerationResult(
             run, current, article, version, call, content_validation=gate
         )
     except Exception as exc:
@@ -404,3 +415,5 @@ def generate_article(event_id, *, dry_run=False, retry=False, provider=None):
         if isinstance(exc, ArticleGenerationError):
             raise
         raise ArticleGenerationError(str(exc)) from exc
+    evaluate_and_maybe_auto_publish(version.pk)
+    return result

@@ -1,5 +1,7 @@
 # SignalToday
 
+[中文说明](README.zh-CN.md)
+
 SignalToday is a mobile-first information radar built around one principle: spend less time scrolling and understand more.
 
 This repository currently contains the Stage 1 infrastructure only. Collection, AI generation, clustering, scoring, images, email delivery, user accounts, and public deployment are intentionally not implemented.

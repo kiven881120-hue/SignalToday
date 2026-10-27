@@ -29,6 +29,7 @@ INSTALLED_APPS = [
     "django.contrib.postgres",
     "django.contrib.staticfiles",
     "apps.core.apps.CoreConfig",
+    "apps.settings.apps.SettingsConfig",
     "apps.sources.apps.SourcesConfig",
     "apps.ingestion.apps.IngestionConfig",
     "apps.events.apps.EventsConfig",

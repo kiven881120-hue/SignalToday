@@ -164,6 +164,7 @@ class ArticleGenerationTests(TestCase):
             {
                 "ARTICLE_CREATED", "ARTICLE_VERSION_CREATED",
                 "ARTICLE_VERSION_CLAIMS_LINKED", "ARTICLE_CONTENT_GATE_VALIDATED",
+                "ARTICLE_RISK_ASSESSED", "ARTICLE_AUTO_PUBLISH_EVALUATED",
             },
         )
 

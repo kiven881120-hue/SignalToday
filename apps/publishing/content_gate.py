@@ -246,6 +246,7 @@ def persist_content_gate(version, output):
         "quality_validator_version": QUALITY_VALIDATOR_VERSION,
         "quality_input": quality_input,
         "quality_result": quality,
+        "content_quality": output.get("content_quality", "") or "",
     }
     gate = (
         ArticleContentValidation.objects.select_for_update()
